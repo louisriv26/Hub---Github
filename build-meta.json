@@ -1,0 +1,41 @@
+{
+  "app_version": "1.0.0",
+  "apps": [
+    {
+      "id": "24h",
+      "status": "available",
+      "url": "https://louisriv26.github.io/Les-24-Heures-de-la-Passion/"
+    },
+    {
+      "id": "ldc",
+      "status": "available",
+      "url": "https://louisriv26.github.io/Le-livre-du-Ciel---Github/"
+    },
+    {
+      "id": "marie",
+      "status": "available",
+      "url": "https://louisriv26.github.io/La-Vierge-Marie-dans-le-Royaume-de-la-Divine-Volont-/"
+    },
+    {
+      "id": "lettres",
+      "status": "available",
+      "url": "https://louisriv26.github.io/Les-lettres-de-Luisa/"
+    }
+  ],
+  "build_date": "2026-08-15",
+  "build_profile": "staging-review",
+  "cache_name": "luisa-hub-shell-018c84d676fc6d48",
+  "collection_icon_status": "FINAL_OWNER_APPROVED",
+  "deploy_path": "/Collection-Luisa/",
+  "evidence_kind": "STAGING_REVIEW",
+  "hub_public_url": "https://louisriv26.github.io/Collection-Luisa/",
+  "manifest_id": "/Collection-Luisa/",
+  "production_authorized": false,
+  "production_deployment_authorized": false,
+  "release_authorized": false,
+  "schema_version": 3,
+  "shell_asset_count": 19,
+  "shell_rev": "018c84d676fc6d48e460b13c94d4d8b73f1983d57af77f2eb3f1d92fb9f95e4c",
+  "version_json_precached": false,
+  "visual_status_fixture": "all"
+}

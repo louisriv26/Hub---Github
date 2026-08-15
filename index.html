@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr" dir="ltr" data-theme="system" data-text="normal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#F9F6F0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="x-build-profile" content="staging-review">
+  <meta name="x-app-version" content="1.0.0">
+  <meta name="x-build-date" content="2026-08-15">
+  <title>Collection Luisa</title>
+  <script src="boot.js"></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="system-banner" class="system-banner" hidden>
+    <span id="system-banner-text" role="status" aria-live="polite"></span>
+    <button id="system-banner-action" type="button" hidden>Actualiser</button>
+  </div>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <h1 class="brand">Collection Luisa</h1>
+      <button class="settings-trigger js-settings-trigger" type="button" hidden>Réglages</button>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <p class="intro">Une collection pour prier, lire et approfondir les écrits de Luisa Piccarreta.</p>
+
+      <ul class="app-grid" aria-label="Les quatre œuvres">
+        <li class="app-card app-card--24h" data-app-id="24h" data-public-state="available">
+          <a class="app-card__link" href="https://louisriv26.github.io/Les-24-Heures-de-la-Passion/" referrerpolicy="no-referrer">
+            <img class="app-card__icon" src="assets/apps/24h.png" alt="" width="64" height="64" decoding="async">
+            <div class="app-card__copy"><h2 class="app-card__title">Les 24 Heures de la Passion</h2><p class="app-card__desc">Prier la Passion, heure par heure</p></div>
+            <span class="app-card__chevron" aria-hidden="true">›</span>
+          </a>
+        </li>
+        <li class="app-card app-card--ldc" data-app-id="ldc" data-public-state="available">
+          <a class="app-card__link" href="https://louisriv26.github.io/Le-livre-du-Ciel---Github/" referrerpolicy="no-referrer">
+            <img class="app-card__icon" src="assets/apps/ldc.png" alt="" width="64" height="64" decoding="async">
+            <div class="app-card__copy"><h2 class="app-card__title">Le Livre du Ciel</h2><p class="app-card__desc">Lire et rechercher les 36 tomes</p></div>
+            <span class="app-card__chevron" aria-hidden="true">›</span>
+          </a>
+        </li>
+        <li class="app-card app-card--marie" data-app-id="marie" data-public-state="available">
+          <a class="app-card__link" href="https://louisriv26.github.io/La-Vierge-Marie-dans-le-Royaume-de-la-Divine-Volont-/" referrerpolicy="no-referrer">
+            <img class="app-card__icon" src="assets/apps/marie.png" alt="" width="64" height="64" decoding="async">
+            <div class="app-card__copy"><h2 class="app-card__title">La Vierge Marie dans le Royaume de la Divine Volonté</h2><p class="app-card__desc">Parcourir les 31 jours avec la Vierge Marie</p></div>
+            <span class="app-card__chevron" aria-hidden="true">›</span>
+          </a>
+        </li>
+        <li class="app-card app-card--lettres" data-app-id="lettres" data-public-state="available">
+          <a class="app-card__link" href="https://louisriv26.github.io/Les-lettres-de-Luisa/" referrerpolicy="no-referrer">
+            <img class="app-card__icon" src="assets/apps/lettres.png" alt="" width="64" height="64" decoding="async">
+            <div class="app-card__copy"><h2 class="app-card__title">Les Lettres de Luisa</h2><p class="app-card__desc">Lire les lettres, explorer les thèmes et suivre des parcours</p></div>
+            <span class="app-card__chevron" aria-hidden="true">›</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="home-footer">
+      <a href="help.html">Aide de la collection</a>
+      <a href="about.html">À propos</a>
+    </footer>
+  </div>
+
+  <dialog id="settings-dialog" class="settings-dialog" aria-labelledby="settings-heading">
+    <div class="settings-dialog__inner">
+      <div class="settings-dialog__header">
+        <h2 id="settings-heading" tabindex="-1">Réglages</h2>
+        <button id="settings-close" class="icon-control" type="button" aria-label="Fermer les réglages">Fermer</button>
+      </div>
+      <p class="settings-scope">Ces réglages s’appliquent uniquement à Collection Luisa.<br>Chaque app conserve ses propres réglages.</p>
+
+      <fieldset class="settings-group">
+        <legend>Taille du texte</legend>
+        <div class="radio-list">
+          <label><input type="radio" name="hub-text" value="small"> <span>Petit</span></label>
+          <label><input type="radio" name="hub-text" value="normal"> <span>Normal</span></label>
+          <label><input type="radio" name="hub-text" value="large"> <span>Grand</span></label>
+          <label><input type="radio" name="hub-text" value="xlarge"> <span>Très grand</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="settings-group">
+        <legend>Thème</legend>
+        <div class="radio-list">
+          <label><input type="radio" name="hub-theme" value="system"> <span>Automatique</span></label>
+          <label><input type="radio" name="hub-theme" value="light"> <span>Clair</span></label>
+          <label><input type="radio" name="hub-theme" value="dark"> <span>Sombre</span></label>
+        </div>
+      </fieldset>
+    </div>
+  </dialog>
+
+  <div id="live" class="visually-hidden" role="status" aria-live="polite"></div>
+</body>
+</html>
