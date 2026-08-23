@@ -221,7 +221,7 @@
     if (!banner || !bannerText || !bannerAction) return;
     if (!navigator.onLine) {
       banner.hidden = false;
-      bannerText.textContent = 'Hors connexion. L’ouverture des autres apps dépend de ce qui est déjà disponible sur cet appareil.';
+      bannerText.textContent = 'Hors connexion. L’ouverture des autres applications dépend de ce qui est déjà disponible sur cet appareil.';
       bannerAction.hidden = true;
       return;
     }
