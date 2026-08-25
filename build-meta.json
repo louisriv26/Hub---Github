@@ -1,5 +1,5 @@
 {
-  "app_version": "1.0.2",
+  "app_version": "1.0.3",
   "apps": [
     {
       "id": "24h",
@@ -22,20 +22,24 @@
       "url": "https://louisriv26.github.io/Les-lettres-de-Luisa/"
     }
   ],
-  "build_date": "2026-08-23",
+  "build_date": "2026-08-25",
   "build_profile": "staging-review",
-  "cache_name": "luisa-hub-shell-c0abb45517183b45",
+  "cache_name": "luisa-hub-shell-17ac3cab4c59aaef",
   "collection_icon_status": "FINAL_OWNER_APPROVED",
   "deploy_path": "/Collection-Luisa/",
   "evidence_kind": "STAGING_REVIEW",
+  "host_limitations": {
+    "frame_ancestors": "HOST_LIMITATION_NOT_AVAILABLE"
+  },
   "hub_public_url": "https://louisriv26.github.io/Collection-Luisa/",
   "manifest_id": "/Collection-Luisa/",
   "production_authorized": false,
   "production_deployment_authorized": false,
   "release_authorized": false,
-  "schema_version": 3,
+  "schema_version": 4,
   "shell_asset_count": 12,
-  "shell_rev": "c0abb45517183b45c5fec96605e6d718185355cb8735c2ff3b85d0b80157de15",
+  "shell_rev": "17ac3cab4c59aaef08f959e01b0b345e078313a413b8779277f04d8e5aafd325",
+  "source_rev": "2544a875b6716290a4e3623993ea1d934e730d10563d84d5a939b95e904ac0f1",
   "version_json_precached": false,
   "visual_status_fixture": "all"
 }

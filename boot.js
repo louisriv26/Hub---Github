@@ -27,8 +27,8 @@
 
   var storedTheme = safeRead(THEME_KEY);
   var storedText = safeRead(TEXT_KEY);
-  var theme = THEMES[storedTheme] ? storedTheme : "system";
-  var text = TEXT_LEVELS[storedText] ? storedText : "normal";
+  var theme = Object.prototype.hasOwnProperty.call(THEMES, storedTheme) ? storedTheme : "system";
+  var text = Object.prototype.hasOwnProperty.call(TEXT_LEVELS, storedText) ? storedText : "normal";
 
   document.documentElement.dataset.theme = theme;
   document.documentElement.dataset.text = text;

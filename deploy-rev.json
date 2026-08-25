@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA-256",
+  "deploy_rev": "ffbac10f54c08ff2a3ca585d21b07d6ef96d339193437b6c108eed7542d9acc3",
+  "excluded_self": "deploy-rev.json",
+  "file_count": 22,
+  "schema_version": 1
+}

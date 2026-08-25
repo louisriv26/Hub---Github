@@ -237,17 +237,51 @@
     bannerAction.hidden = true;
   }
 
+  function queryWorkerStatus(worker) {
+    return new Promise((resolve) => {
+      if (!worker || !navigator.serviceWorker) { resolve(null); return; }
+      const channel = new MessageChannel();
+      let settled = false;
+      const finish = (value) => {
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(timer);
+        channel.port1.close();
+        resolve(value);
+      };
+      const timer = window.setTimeout(() => finish(null), 1500);
+      channel.port1.onmessage = (event) => finish(event.data || null);
+      worker.postMessage({ type: 'GET_STATUS' }, [channel.port2]);
+    });
+  }
+
   function requestWorkerStatus(worker) {
-    if (!worker || !navigator.serviceWorker) return;
-    const channel = new MessageChannel();
-    const timer = window.setTimeout(() => channel.port1.close(), 1500);
-    channel.port1.onmessage = (event) => {
-      window.clearTimeout(timer);
-      const data = event.data || {};
+    queryWorkerStatus(worker).then((data) => {
+      if (!data) return;
       if (typeof data.shellRev === 'string') pwaState.shellRev = data.shellRev;
       if (typeof data.cacheName === 'string') pwaState.swState = `active:${data.cacheName}`;
-    };
-    worker.postMessage({ type: 'GET_STATUS' }, [channel.port2]);
+    });
+  }
+
+  function requestCacheCleanup(worker, expectedShellRev) {
+    return new Promise((resolve) => {
+      if (!worker) { resolve(false); return; }
+      const channel = new MessageChannel();
+      let settled = false;
+      const finish = (value) => {
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(timer);
+        channel.port1.close();
+        resolve(value);
+      };
+      const timer = window.setTimeout(() => finish(false), 2000);
+      channel.port1.onmessage = (event) => {
+        const data = event.data || {};
+        finish(data.ok === true && data.shellRev === expectedShellRev);
+      };
+      worker.postMessage({ type: 'CLEAN_OLD_HUB_CACHES' }, [channel.port2]);
+    });
   }
 
   function setWaitingWorker(worker) {
@@ -288,7 +322,18 @@
     if (!shouldClean) return;
     const controller = navigator.serviceWorker?.controller;
     if (!controller) return; // keep the flag so a later controlled load can retry cleanup
-    controller.postMessage({ type: 'CLEAN_OLD_HUB_CACHES' });
+    let expectedShellRev = null;
+    try {
+      const response = await fetch('./version.json', { cache: 'no-store' });
+      if (!response.ok) return;
+      const version = await response.json();
+      if (typeof version.shell_rev !== 'string') return;
+      expectedShellRev = version.shell_rev;
+    } catch (_error) { return; } // offline cleanup may safely wait; stale caches are non-critical
+    const status = await queryWorkerStatus(controller);
+    if (!status || status.shellRev !== expectedShellRev) return;
+    const cleaned = await requestCacheCleanup(controller, expectedShellRev);
+    if (!cleaned) return;
     try { sessionStorage.removeItem(CLEANUP_FLAG); } catch (_error) {}
   }
 
@@ -297,6 +342,7 @@
     if (!force && now - pwaState.lastUpdateCheck < 60 * 60 * 1000) return;
     pwaState.lastUpdateCheck = now;
     try { await registration.update(); } catch (_error) { /* offline is already represented by banner */ }
+    if (registration.waiting && navigator.serviceWorker.controller) setWaitingWorker(registration.waiting);
   }
 
   async function installPwa() {

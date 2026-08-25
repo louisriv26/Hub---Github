@@ -1,6 +1,6 @@
 /* generated — Collection Luisa */
 'use strict';
-const SHELL_REV = "c0abb45517183b45c5fec96605e6d718185355cb8735c2ff3b85d0b80157de15";
+const SHELL_REV = "17ac3cab4c59aaef08f959e01b0b345e078313a413b8779277f04d8e5aafd325";
 const CACHE_NAME = `luisa-hub-shell-${SHELL_REV.slice(0,16)}`;
 const SHELL_ASSETS = ["index.html","help.html","about.html","404.html","styles.css","boot.js","app.js","manifest.webmanifest","assets/apps/24h-192.png","assets/apps/ldc-192.png","assets/apps/marie-192.png","assets/apps/lettres-192.png"];
 const SCOPE_PATH = new URL(self.registration.scope).pathname;
@@ -33,7 +33,10 @@ self.addEventListener('message',(event)=>{
   if (data.type==='SKIP_WAITING') { event.waitUntil(self.skipWaiting()); return; }
   if (data.type==='GET_STATUS') { const port=event.ports&&event.ports[0]; if (port) port.postMessage({shellRev:SHELL_REV,cacheName:CACHE_NAME}); return; }
   if (data.type==='CLEAN_OLD_HUB_CACHES') {
-    event.waitUntil(caches.keys().then((names)=>Promise.all(names.filter((n)=>n.startsWith('luisa-hub-')&&n!==CACHE_NAME).map((n)=>caches.delete(n)))));
+    const port=event.ports&&event.ports[0];
+    event.waitUntil(caches.keys()
+      .then((names)=>Promise.all(names.filter((n)=>n.startsWith('luisa-hub-')&&n!==CACHE_NAME).map((n)=>caches.delete(n))))
+      .then(()=>{ if (port) port.postMessage({ok:true,shellRev:SHELL_REV,cacheName:CACHE_NAME}); }));
   }
 });
 self.addEventListener('fetch',(event)=>{
