@@ -1,8 +1,8 @@
 {
   "app_id": "luisa-hub",
-  "app_version": "1.0.3",
+  "app_version": "1.0.5",
   "build_date": "2026-08-25",
   "manifest_id": "/Collection-Luisa/",
   "schema_version": 1,
-  "shell_rev": "17ac3cab4c59aaef08f959e01b0b345e078313a413b8779277f04d8e5aafd325"
+  "shell_rev": "9116d4c8266d0a243fe2d1391f673552493af1d304d4fb03217fc18b9cd8d6fa"
 }
