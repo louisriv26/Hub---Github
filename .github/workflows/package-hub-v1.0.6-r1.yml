@@ -1,0 +1,71 @@
+name: Package Hub v1.0.6 R1
+
+on:
+  push:
+    branches:
+      - package-hub-v1.0.6-r1
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact frozen candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 81d0c1675c2527eef0f1a06a7414a20b395de2a2
+          path: candidate
+          fetch-depth: 1
+
+      - name: Build deterministic GitHub deploy ZIP and manifest
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv, hashlib, zipfile
+
+          root = Path("candidate")
+          out = Path("out")
+          out.mkdir()
+          files = sorted(
+              p for p in root.rglob("*")
+              if p.is_file() and ".git" not in p.parts
+          )
+
+          manifest = []
+          for p in files:
+              rel = p.relative_to(root).as_posix()
+              data = p.read_bytes()
+              manifest.append((rel, len(data), hashlib.sha256(data).hexdigest()))
+
+          zip_path = out / "Collection_Luisa_Hub_v1.0.6_R1_GITHUB_DEPLOY.zip"
+          with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+              for p in files:
+                  rel = p.relative_to(root).as_posix()
+                  zi = zipfile.ZipInfo(rel, date_time=(2026, 9, 27, 0, 0, 0))
+                  zi.compress_type = zipfile.ZIP_DEFLATED
+                  zi.external_attr = 0o100644 << 16
+                  z.writestr(zi, p.read_bytes())
+
+          with (out / "HUB_V1_0_6_R1_PACKAGE_FILE_MANIFEST_SHA256.csv").open("w", newline="", encoding="utf-8") as f:
+              w = csv.writer(f)
+              w.writerow(["path","size_bytes","sha256"])
+              w.writerows(manifest)
+
+          digest = hashlib.sha256(zip_path.read_bytes()).hexdigest()
+          (out / "Collection_Luisa_Hub_v1.0.6_R1_GITHUB_DEPLOY_SHA256.txt").write_text(
+              digest + "  " + zip_path.name + "\n", encoding="utf-8"
+          )
+          print("members", len(files))
+          print("zip_sha256", digest)
+          PY
+
+      - name: Upload packaging artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hub-v1.0.6-r1-github-deploy
+          path: out/*
+          if-no-files-found: error
+          retention-days: 7
