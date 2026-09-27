@@ -7,8 +7,8 @@
   "schema_version": 2,
   "shell_rev": "742db462fa3f5e77878e39f238c1af180e600fa5471969f38d52d1b08b88607a",
   "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS; sw.js and generated identity files excluded)",
-  "source_predecessor_commit": "abc2352372a45b76228f05cb2679beb9c119a139",
-  "source_checkpoint_commit": "b71e91f01a2343f1788c80c2b90f2e0428216b15",
+  "source_predecessor_commit": "81d0c1675c2527eef0f1a06a7414a20b395de2a2",
+  "source_checkpoint_commit": "b6084a45fb474a9a88225fb0fc93ac5c9d9e5d4d",
   "source_checkpoint_role": "bounded functional checkpoint before final generated identity",
-  "branch": "ux-hub-v1.0.6-r1"
+  "branch": "ux-hub-v1.0.6-r2"
 }
