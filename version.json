@@ -1,8 +1,14 @@
 {
   "app_id": "luisa-hub",
-  "app_version": "1.0.5",
-  "build_date": "2026-08-25",
-  "manifest_id": "/Collection-Luisa/",
-  "schema_version": 1,
-  "shell_rev": "9116d4c8266d0a243fe2d1391f673552493af1d304d4fb03217fc18b9cd8d6fa"
+  "app_version": "1.0.6",
+  "build_date": "2026-09-27",
+  "manifest_id": "/Hub---Github/",
+  "public_url": "https://louisriv26.github.io/Hub---Github/",
+  "schema_version": 2,
+  "shell_rev": "981982547b37c32e63a876b9aad322afe3db40ce8cf33f1e2c815e9382918c8f",
+  "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS)",
+  "source_predecessor_commit": "abc2352372a45b76228f05cb2679beb9c119a139",
+  "source_checkpoint_commit": "f2ceef870d6c36347fc9f7da2e6630f9b69c72ae",
+  "source_checkpoint_role": "bounded functional changes before generated identity metadata",
+  "branch": "ux-hub-v1.0.6-r1"
 }
