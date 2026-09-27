@@ -209,6 +209,8 @@
     waitingWorker: null,
     shellRev: 'unknown',
     swState: 'unsupported',
+    swScopePath: 'unknown',
+    cacheName: 'unknown',
     lastUpdateCheck: 0,
     reloadIssued: false
   };
