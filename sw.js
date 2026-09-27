@@ -1,9 +1,15 @@
 /* generated — Collection Luisa */
 'use strict';
 const SHELL_REV = "742db462fa3f5e77878e39f238c1af180e600fa5471969f38d52d1b08b88607a";
-const CACHE_NAME = `luisa-hub-shell-${SHELL_REV.slice(0,16)}`;
 const SHELL_ASSETS = ["index.html","help.html","about.html","404.html","styles.css","boot.js","app.js","manifest.webmanifest","assets/apps/24h-192.png","assets/apps/ldc-192.png","assets/apps/marie-192.png","assets/apps/lettres-192.png"];
 const SCOPE_PATH = new URL(self.registration.scope).pathname;
+function scopeCacheToken(pathname) {
+  const token = pathname.replace(/[^A-Za-z0-9._-]+/g, "_").replace(/^_+|_+$/g, "");
+  return token || "root";
+}
+const CACHE_SCOPE_TOKEN = scopeCacheToken(SCOPE_PATH);
+const CACHE_PREFIX = `luisa-hub-${CACHE_SCOPE_TOKEN}-`;
+const CACHE_NAME = `${CACHE_PREFIX}shell-${SHELL_REV.slice(0,16)}`;
 const SHELL_PATHS = new Set(SHELL_ASSETS.map((rel) => new URL(rel, self.registration.scope).pathname));
 const INDEX = new URL('index.html', self.registration.scope).pathname;
 const HELP = new URL('help.html', self.registration.scope).pathname;
