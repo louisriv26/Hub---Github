@@ -8,7 +8,7 @@ function scopeCacheToken(pathname) {
   return token || "root";
 }
 const CACHE_SCOPE_TOKEN = scopeCacheToken(SCOPE_PATH);
-const CACHE_PREFIX = `luisa-hub-${CACHE_SCOPE_TOKEN}-`;
+const CACHE_PREFIX = `luisa-hub-${CACHE_SCOPE_TOKEN}::`;
 const CACHE_NAME = `${CACHE_PREFIX}shell-${SHELL_REV.slice(0,16)}`;
 const SHELL_PATHS = new Set(SHELL_ASSETS.map((rel) => new URL(rel, self.registration.scope).pathname));
 const INDEX = new URL('index.html', self.registration.scope).pathname;
