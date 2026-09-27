@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "basis": "sha256(sorted path + TAB + Git blob SHA + LF for every final branch blob except deploy-rev.json)",
-  "deploy_rev": "c92a339733680bb9726a949b59a74c2aede1e0c1c8e6e67ca7252ea46572987f",
+  "deploy_rev": "ee2e0f0696a6ca628a1ee890567b3f52a683917b6b5ece1da15d85e835e59c2d",
   "excluded_self": "deploy-rev.json",
   "hashed_file_count": 22,
   "total_file_count": 23,
