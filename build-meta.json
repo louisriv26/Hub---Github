@@ -40,7 +40,7 @@
   "schema_version": 5,
   "shell_asset_count": 12,
   "shell_rev": "981982547b37c32e63a876b9aad322afe3db40ce8cf33f1e2c815e9382918c8f",
-  "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS)",
+  "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS at source_checkpoint_commit, before generated identity metadata)",
   "source_predecessor_commit": "abc2352372a45b76228f05cb2679beb9c119a139",
   "source_checkpoint_commit": "f2ceef870d6c36347fc9f7da2e6630f9b69c72ae",
   "source_checkpoint_role": "bounded functional changes before generated identity metadata",
@@ -48,5 +48,7 @@
   "source_rev_status": "BOUND_SUCCESSOR_CHECKPOINT",
   "version_json_precached": false,
   "visual_status_fixture": "all",
-  "deploy_rev_file": "deploy-rev.json"
+  "deploy_rev_file": "deploy-rev.json",
+  "shell_rev_basis_commit": "f2ceef870d6c36347fc9f7da2e6630f9b69c72ae",
+  "shell_rev_basis_role": "bounded functional checkpoint before generated shell/deploy identity metadata"
 }
