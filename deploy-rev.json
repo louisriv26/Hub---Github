@@ -1,7 +1,11 @@
 {
   "algorithm": "SHA-256",
-  "deploy_rev": "684feae78e8a7566567a69b379df2439d41767da17075af1f58188205147c3c9",
+  "basis": "sha256(sorted path + TAB + Git blob SHA + LF for every final branch blob except deploy-rev.json)",
+  "deploy_rev": "c92a339733680bb9726a949b59a74c2aede1e0c1c8e6e67ca7252ea46572987f",
   "excluded_self": "deploy-rev.json",
-  "file_count": 22,
-  "schema_version": 1
+  "hashed_file_count": 22,
+  "total_file_count": 23,
+  "schema_version": 2,
+  "source_predecessor_commit": "abc2352372a45b76228f05cb2679beb9c119a139",
+  "branch": "ux-hub-v1.0.6-r1"
 }
