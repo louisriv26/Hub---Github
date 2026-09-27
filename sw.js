@@ -1,6 +1,6 @@
 /* generated — Collection Luisa */
 'use strict';
-const SHELL_REV = "9116d4c8266d0a243fe2d1391f673552493af1d304d4fb03217fc18b9cd8d6fa";
+const SHELL_REV = "981982547b37c32e63a876b9aad322afe3db40ce8cf33f1e2c815e9382918c8f";
 const CACHE_NAME = `luisa-hub-shell-${SHELL_REV.slice(0,16)}`;
 const SHELL_ASSETS = ["index.html","help.html","about.html","404.html","styles.css","boot.js","app.js","manifest.webmanifest","assets/apps/24h-192.png","assets/apps/ldc-192.png","assets/apps/marie-192.png","assets/apps/lettres-192.png"];
 const SCOPE_PATH = new URL(self.registration.scope).pathname;
