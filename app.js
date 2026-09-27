@@ -209,6 +209,8 @@
     waitingWorker: null,
     shellRev: 'unknown',
     swState: 'unsupported',
+    swScopePath: 'unknown',
+    cacheName: 'unknown',
     lastUpdateCheck: 0,
     reloadIssued: false
   };
@@ -259,7 +261,8 @@
     queryWorkerStatus(worker).then((data) => {
       if (!data) return;
       if (typeof data.shellRev === 'string') pwaState.shellRev = data.shellRev;
-      if (typeof data.cacheName === 'string') pwaState.swState = `active:${data.cacheName}`;
+      if (typeof data.cacheName === 'string') { pwaState.cacheName = data.cacheName; pwaState.swState = `active:${data.cacheName}`; }
+      if (typeof data.scopePath === 'string') pwaState.swScopePath = data.scopePath;
     });
   }
 
@@ -397,7 +400,9 @@
     return [
       `app_version=${meta('x-app-version')}`,
       `build_date=${meta('x-build-date')}`,
-      'manifest_id=/Collection-Luisa/',
+      'manifest_id=/Hub---Github/',
+      `service_worker_scope=${pwaState.swScopePath}`,
+      `cache_name=${pwaState.cacheName}`,
       `shell_rev=${pwaState.shellRev}`,
       `sw_state=${pwaState.swState}`,
       `display_mode=${displayMode()}`,

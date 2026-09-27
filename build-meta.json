@@ -1,5 +1,5 @@
 {
-  "app_version": "1.0.5",
+  "app_version": "1.0.6",
   "apps": [
     {
       "id": "24h",
@@ -22,26 +22,31 @@
       "url": "https://louisriv26.github.io/Les-lettres-de-Luisa/"
     }
   ],
-  "baseline_source_rev": "2544a875b6716290a4e3623993ea1d934e730d10563d84d5a939b95e904ac0f1",
-  "build_date": "2026-08-25",
+  "build_date": "2026-09-27",
   "build_profile": "staging-review",
-  "cache_name": "luisa-hub-shell-9116d4c8266d0a24",
+  "cache_prefix": "luisa-hub-Hub---Github-",
+  "cache_name": "luisa-hub-Hub---Github-shell-742db462fa3f5e77",
   "collection_icon_status": "FINAL_OWNER_APPROVED",
-  "deploy_path": "/Collection-Luisa/",
+  "deploy_path": "/Hub---Github/",
   "evidence_kind": "STAGING_REVIEW",
   "host_limitations": {
     "frame_ancestors": "HOST_LIMITATION_NOT_AVAILABLE"
   },
-  "hub_public_url": "https://louisriv26.github.io/Collection-Luisa/",
-  "manifest_id": "/Collection-Luisa/",
+  "hub_public_url": "https://louisriv26.github.io/Hub---Github/",
+  "manifest_id": "/Hub---Github/",
   "production_authorized": false,
   "production_deployment_authorized": false,
   "release_authorized": false,
-  "schema_version": 4,
+  "schema_version": 5,
   "shell_asset_count": 12,
-  "shell_rev": "9116d4c8266d0a243fe2d1391f673552493af1d304d4fb03217fc18b9cd8d6fa",
-  "source_rev": null,
-  "source_rev_status": "NOT_TESTED_SOURCE_CHECKPOINT_UNAVAILABLE",
+  "shell_rev": "742db462fa3f5e77878e39f238c1af180e600fa5471969f38d52d1b08b88607a",
+  "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS; sw.js and generated identity files excluded)",
+  "source_predecessor_commit": "abc2352372a45b76228f05cb2679beb9c119a139",
+  "source_checkpoint_commit": "b71e91f01a2343f1788c80c2b90f2e0428216b15",
+  "source_checkpoint_role": "bounded functional checkpoint before final generated identity",
+  "source_branch": "ux-hub-v1.0.6-r1",
+  "source_rev_status": "BOUND_SUCCESSOR_CHECKPOINT",
   "version_json_precached": false,
-  "visual_status_fixture": "all"
+  "visual_status_fixture": "all",
+  "deploy_rev_file": "deploy-rev.json"
 }
