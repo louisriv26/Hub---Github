@@ -31,11 +31,11 @@ self.addEventListener('activate',(event)=>{ event.waitUntil(Promise.resolve()); 
 self.addEventListener('message',(event)=>{
   const data=event.data||{};
   if (data.type==='SKIP_WAITING') { event.waitUntil(self.skipWaiting()); return; }
-  if (data.type==='GET_STATUS') { const port=event.ports&&event.ports[0]; if (port) port.postMessage({shellRev:SHELL_REV,cacheName:CACHE_NAME}); return; }
+  if (data.type==='GET_STATUS') { const port=event.ports&&event.ports[0]; if (port) port.postMessage({shellRev:SHELL_REV,cacheName:CACHE_NAME,cachePrefix:CACHE_PREFIX,scopePath:SCOPE_PATH}); return; }
   if (data.type==='CLEAN_OLD_HUB_CACHES') {
     const port=event.ports&&event.ports[0];
     event.waitUntil(caches.keys()
-      .then((names)=>Promise.all(names.filter((n)=>n.startsWith('luisa-hub-')&&n!==CACHE_NAME).map((n)=>caches.delete(n))))
+      .then((names)=>Promise.all(names.filter((n)=>n.startsWith(CACHE_PREFIX)&&n!==CACHE_NAME).map((n)=>caches.delete(n))))
       .then(()=>{ if (port) port.postMessage({ok:true,shellRev:SHELL_REV,cacheName:CACHE_NAME}); }));
   }
 });
