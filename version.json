@@ -5,12 +5,10 @@
   "manifest_id": "/Hub---Github/",
   "public_url": "https://louisriv26.github.io/Hub---Github/",
   "schema_version": 2,
-  "shell_rev": "981982547b37c32e63a876b9aad322afe3db40ce8cf33f1e2c815e9382918c8f",
-  "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS at source_checkpoint_commit, before generated identity metadata)",
+  "shell_rev": "742db462fa3f5e77878e39f238c1af180e600fa5471969f38d52d1b08b88607a",
+  "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS; sw.js and generated identity files excluded)",
   "source_predecessor_commit": "abc2352372a45b76228f05cb2679beb9c119a139",
-  "source_checkpoint_commit": "f2ceef870d6c36347fc9f7da2e6630f9b69c72ae",
-  "source_checkpoint_role": "bounded functional changes before generated identity metadata",
-  "branch": "ux-hub-v1.0.6-r1",
-  "shell_rev_basis_commit": "f2ceef870d6c36347fc9f7da2e6630f9b69c72ae",
-  "shell_rev_basis_role": "bounded functional checkpoint before generated shell/deploy identity metadata"
+  "source_checkpoint_commit": "b71e91f01a2343f1788c80c2b90f2e0428216b15",
+  "source_checkpoint_role": "bounded functional checkpoint before final generated identity",
+  "branch": "ux-hub-v1.0.6-r1"
 }
