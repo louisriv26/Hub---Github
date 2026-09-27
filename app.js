@@ -259,7 +259,8 @@
     queryWorkerStatus(worker).then((data) => {
       if (!data) return;
       if (typeof data.shellRev === 'string') pwaState.shellRev = data.shellRev;
-      if (typeof data.cacheName === 'string') { pwaState.cacheName = data.cacheName; pwaState.swState = `active:${data.cacheName}`; }\n      if (typeof data.scopePath === 'string') pwaState.swScopePath = data.scopePath;
+      if (typeof data.cacheName === 'string') { pwaState.cacheName = data.cacheName; pwaState.swState = `active:${data.cacheName}`; }
+      if (typeof data.scopePath === 'string') pwaState.swScopePath = data.scopePath;
     });
   }
 
@@ -397,7 +398,9 @@
     return [
       `app_version=${meta('x-app-version')}`,
       `build_date=${meta('x-build-date')}`,
-      'manifest_id=/Hub---Github/',\n      `service_worker_scope=${pwaState.swScopePath}`,\n      `cache_name=${pwaState.cacheName}`,
+      'manifest_id=/Hub---Github/',
+      `service_worker_scope=${pwaState.swScopePath}`,
+      `cache_name=${pwaState.cacheName}`,
       `shell_rev=${pwaState.shellRev}`,
       `sw_state=${pwaState.swState}`,
       `display_mode=${displayMode()}`,
