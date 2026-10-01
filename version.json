@@ -1,14 +1,14 @@
 {
   "app_id": "luisa-hub",
-  "app_version": "1.0.6",
-  "build_date": "2026-09-27",
+  "app_version": "1.1",
+  "build_date": "2026-10-01",
   "manifest_id": "/Hub---Github/",
   "public_url": "https://louisriv26.github.io/Hub---Github/",
   "schema_version": 2,
-  "shell_rev": "89a9663a3e259a344a6717bff2adff170edc331ddabec0b46da94e03cee2314c",
+  "shell_rev": "704fd88f0101425bcf306a02769d8581628d66160882512dc0badb02449901b5",
   "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS; sw.js and generated identity files excluded)",
-  "source_predecessor_commit": "81d0c1675c2527eef0f1a06a7414a20b395de2a2",
-  "source_checkpoint_commit": "adf185ded64b97b1ec19fdc299efd50749f1e414",
+  "source_predecessor_commit": "edde0ee96eff09a511c01921a2ca56ee576dddb6",
+  "source_checkpoint_commit": "fee2e469a53b79c58add27fc923436db0adee523",
   "source_checkpoint_role": "bounded functional checkpoint before final generated identity",
-  "branch": "ux-hub-v1.0.6-r2"
+  "branch": "candidate-v1.1-prephysical-closure"
 }

@@ -1,6 +1,6 @@
 /* generated — Collection Luisa */
 'use strict';
-const SHELL_REV = "89a9663a3e259a344a6717bff2adff170edc331ddabec0b46da94e03cee2314c";
+const SHELL_REV = "704fd88f0101425bcf306a02769d8581628d66160882512dc0badb02449901b5";
 const SHELL_ASSETS = ["index.html","help.html","about.html","404.html","styles.css","boot.js","app.js","manifest.webmanifest","assets/apps/24h-192.png","assets/apps/ldc-192.png","assets/apps/marie-192.png","assets/apps/lettres-192.png"];
 const SCOPE_PATH = new URL(self.registration.scope).pathname;
 function scopeCacheToken(pathname) {

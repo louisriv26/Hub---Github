@@ -1,5 +1,5 @@
 {
-  "app_version": "1.0.6",
+  "app_version": "1.1",
   "apps": [
     {
       "id": "24h",
@@ -22,10 +22,10 @@
       "url": "https://louisriv26.github.io/Les-lettres-de-Luisa/"
     }
   ],
-  "build_date": "2026-09-27",
+  "build_date": "2026-10-01",
   "build_profile": "staging-review",
   "cache_prefix": "luisa-hub-%2FHub---Github%2F::",
-  "cache_name": "luisa-hub-%2FHub---Github%2F::shell-89a9663a3e259a34",
+  "cache_name": "luisa-hub-%2FHub---Github%2F::shell-704fd88f0101425b",
   "collection_icon_status": "FINAL_OWNER_APPROVED",
   "deploy_path": "/Hub---Github/",
   "evidence_kind": "STAGING_REVIEW",
@@ -39,13 +39,13 @@
   "release_authorized": false,
   "schema_version": 5,
   "shell_asset_count": 12,
-  "shell_rev": "89a9663a3e259a344a6717bff2adff170edc331ddabec0b46da94e03cee2314c",
+  "shell_rev": "704fd88f0101425bcf306a02769d8581628d66160882512dc0badb02449901b5",
   "shell_rev_algorithm": "sha256(sorted path + TAB + Git blob SHA + LF for the 12 SHELL_ASSETS; sw.js and generated identity files excluded)",
-  "source_predecessor_commit": "81d0c1675c2527eef0f1a06a7414a20b395de2a2",
-  "source_checkpoint_commit": "adf185ded64b97b1ec19fdc299efd50749f1e414",
+  "source_predecessor_commit": "edde0ee96eff09a511c01921a2ca56ee576dddb6",
+  "source_checkpoint_commit": "fee2e469a53b79c58add27fc923436db0adee523",
   "source_checkpoint_role": "bounded functional checkpoint before final generated identity",
-  "source_branch": "ux-hub-v1.0.6-r2",
-  "source_rev_status": "BOUND_SUCCESSOR_CHECKPOINT",
+  "source_branch": "candidate-v1.1-prephysical-closure",
+  "source_rev_status": "BOUND_PREPHYSICAL_SUCCESSOR_CHECKPOINT",
   "version_json_precached": false,
   "visual_status_fixture": "all",
   "deploy_rev_file": "deploy-rev.json"
